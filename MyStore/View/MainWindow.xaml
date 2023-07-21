@@ -1,0 +1,237 @@
+﻿<Window x:Class="MyStore.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyStore"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        
+        <Style x:Key="btn" TargetType="Button">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="HorizontalContentAlignment" Value="left"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="Cambria Math"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Foreground" Value="GhostWhite"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Padding" Value="10 0 0 0" />
+
+        </Style>
+        <Style x:Key="sub_btn" TargetType="Button" BasedOn="{StaticResource btn}">
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            
+        </Style>
+
+
+    </Window.Resources>
+  
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <!-- side panel contains Buttons that access pages and show them in main panel-->
+        <StackPanel x:Name="side_panel"
+                    Grid.Column="0"
+                    Background="#FF05053C">
+          
+            <TextBlock x:Name="logo_textBlock"
+                       Text="Mon Magasin"
+                       FontSize="18"
+                       TextAlignment="Center"
+                       FontWeight="Bold"
+                       FontFamily="Yu Gothic"
+                       Foreground="AntiqueWhite"
+                       Margin="0 0 0 10"
+                       Padding="5"
+                       />
+
+            <Button x:Name="sales_btn" 
+                    Style="{StaticResource btn}"
+                    MouseEnter="Button_MouseEnter"
+                    MouseLeave="Button_MouseLeave"
+                    Click="sales_btn_Click"
+                    >
+                <DockPanel>
+                    <Image Source="../Assets/Images/MainWindow/Icons/sales-icon.png" Width="25" Margin="0 0 10 0"/>
+                    <TextBlock Text="Vente"
+                               FontSize="16"
+                               VerticalAlignment="Center"/>
+                </DockPanel>
+               
+            </Button>
+            <StackPanel x:Name="sales_subMenu" 
+                        Visibility="Collapsed">
+                
+                <Button x:Name="newSale_btn" 
+                    Content="Nouveau Vente"
+                    Style="{StaticResource sub_btn}"
+                    MouseEnter="Button_MouseEnter"
+                    MouseLeave="SubButton_MouseLeave"
+                    />
+                
+                <Button x:Name="salesHistory_btn" 
+                    Content="Historique"
+                    Style="{StaticResource sub_btn}"
+                    MouseEnter="Button_MouseEnter"
+                    MouseLeave="SubButton_MouseLeave"
+                    />
+                
+            </StackPanel>
+
+            <Button x:Name="purchases_btn"           
+                    Style="{StaticResource btn}"
+                    MouseEnter="Button_MouseEnter"
+                    MouseLeave="Button_MouseLeave"
+                    Click="purchases_btn_Click"
+                    >
+                
+                <DockPanel>
+                 <Image Source="../Assets/Images/MainWindow/Icons/purchase-icon.png"
+                        Width="25" 
+                        Margin="0 0 10 0" 
+                        OpacityMask="#FFFBF7F7" />
+                 <TextBlock Text="Achats"
+                               FontSize="16"
+                               VerticalAlignment="Center"/>
+                </DockPanel>
+
+            </Button>
+            <StackPanel x:Name="purchases_subMenu"
+                        Visibility="Collapsed">
+               
+                <Button x:Name="newpurchase_btn" 
+                    Content="Nouveau Achat"
+                    Style="{StaticResource sub_btn}"
+                         MouseEnter="Button_MouseEnter"
+                    MouseLeave="SubButton_MouseLeave"
+                    />
+
+                <Button x:Name="purchasesHistory_btn" 
+                    Content="Historique"
+                    Style="{StaticResource sub_btn}"
+                         MouseEnter="Button_MouseEnter"
+                    MouseLeave="SubButton_MouseLeave"
+                    />
+            </StackPanel>
+
+            <Button x:Name="products_btn"
+                    Style="{StaticResource btn}"
+                    MouseEnter="Button_MouseEnter"
+                    MouseLeave="Button_MouseLeave"
+                    Click="products_btn_Click">
+                <DockPanel  >
+                <Image Source="../Assets/Images/MainWindow/Icons/product-icon.png" Width="25" Margin="0 0 10 0"/>
+                <TextBlock Text="Produits"
+                               FontSize="16"
+                               VerticalAlignment="Center"/>
+                </DockPanel>
+
+            </Button>
+            <StackPanel x:Name="products_subMenu"
+                        Visibility="Collapsed">
+                
+                <Button x:Name="newProduct_btn" 
+                    Content="Nouveau Produit"
+                    Style="{StaticResource sub_btn}"
+                    MouseEnter="Button_MouseEnter"
+                    MouseLeave="SubButton_MouseLeave"
+                    />
+
+                <Button x:Name="products_table_btn" 
+                    Content="Table Produit"
+                    Style="{StaticResource sub_btn}"
+                    MouseEnter="Button_MouseEnter"
+                    MouseLeave="SubButton_MouseLeave"
+                    />
+                
+                <Button x:Name="addQntToProduct_btn" 
+                    Content="Ajouter au stock"
+                    Style="{StaticResource sub_btn}"
+                    MouseEnter="Button_MouseEnter"
+                    MouseLeave="SubButton_MouseLeave"/>
+            </StackPanel>
+
+            <Button x:Name="users_btn" 
+                    Style="{StaticResource btn}"
+                    MouseEnter="Button_MouseEnter"
+                    MouseLeave="Button_MouseLeave"
+                    Click="users_btn_Click">
+                <DockPanel  >
+                <Image Source="../Assets/Images/MainWindow/Icons/user-icon.png" Width="25" Margin="0 0 10 0"/>
+                    <TextBlock Text="Utilisateurs"
+                               FontSize="16"
+                               VerticalAlignment="Center"/>
+                </DockPanel>
+
+            </Button>
+            <StackPanel x:Name="users_subMenu"
+                        Visibility="Collapsed">
+                
+                <Button x:Name="user_table_btn" 
+                    Content="Utilisateur"
+                    Style="{StaticResource sub_btn}"
+                    MouseEnter="Button_MouseEnter"
+                    MouseLeave="SubButton_MouseLeave"    
+                    />
+
+                <Button x:Name="client_table_btn" 
+                    Content="Client"
+                    Style="{StaticResource sub_btn}"
+                    MouseEnter="Button_MouseEnter"
+                    MouseLeave="SubButton_MouseLeave"
+                    />
+                
+                <Button x:Name="supplier_table_btn" 
+                    Content="Fournisseur"
+                    Style="{StaticResource sub_btn}"
+                    MouseEnter="Button_MouseEnter"
+                    MouseLeave="SubButton_MouseLeave"   
+                    />
+
+            </StackPanel>
+
+            <Button x:Name="statistics_btn"             
+                    Style="{StaticResource btn}"
+                    MouseEnter="Button_MouseEnter"
+                    MouseLeave="Button_MouseLeave"
+                    Click="statistics_btn_Click">
+                <DockPanel  >
+                <Image Source="../Assets/Images/MainWindow/Icons/statistics-icon.png" Width="25" Margin="0 0 10 0"/>
+                <TextBlock Text="Statistics"
+                               FontSize="16"
+                               VerticalAlignment="Center"/>
+                </DockPanel>
+
+            </Button>
+
+            <Button x:Name="exit_btn"
+                    Style="{StaticResource btn}"
+                    MouseEnter="Button_MouseEnter"
+                    MouseLeave="Button_MouseLeave"
+                    Click="exit_btn_Click">
+                <DockPanel  >
+                <Image Source="../Assets/Images/MainWindow/Icons/exit-icon.png" Width="25" Margin="0 0 10 0" />
+                    <TextBlock Text="Quitter"
+                               FontSize="16"
+                               VerticalAlignment="Center"/>
+                </DockPanel>
+
+            </Button>
+
+
+
+        </StackPanel>
+       
+        <!-- main Panel hosts all the pages of the application except the login page-->
+        <StackPanel x:Name="main_panel"
+                    Grid.Column="1">
+            
+        </StackPanel>
+    </Grid>
+</Window>

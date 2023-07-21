@@ -7,4 +7,43 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Assets\Images\MainWindow\Icons\exit-icon.png" />
+    <None Remove="Assets\Images\MainWindow\Icons\login.png" />
+    <None Remove="Assets\Images\MainWindow\Icons\product-icon.png" />
+    <None Remove="Assets\Images\MainWindow\Icons\purchase-icon.png" />
+    <None Remove="Assets\Images\MainWindow\Icons\sales-icon.png" />
+    <None Remove="Assets\Images\MainWindow\Icons\statistics-icon.png" />
+    <None Remove="Assets\Images\MainWindow\Icons\user-icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ModelView\" />
+    <Folder Include="Model\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Images\MainWindow\Icons\exit-icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\MainWindow\Icons\login.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\MainWindow\Icons\product-icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\MainWindow\Icons\purchase-icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\MainWindow\Icons\sales-icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\MainWindow\Icons\statistics-icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\MainWindow\Icons\user-icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
 </Project>
