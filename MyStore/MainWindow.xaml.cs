@@ -24,5 +24,24 @@ namespace MyStore
         {
             InitializeComponent();
         }
+
+        private void Button_MouseEnter(object sender, MouseEventArgs e)
+        {
+           Button btn = (Button)sender;
+                btn.Background=Brushes.Tomato;
+                btn.Foreground = Brushes.Black;
+                btn.FontSize = 14;
+                btn.FontWeight = FontWeights.Bold;
+
+        }
+
+        private void Button_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.Background = Brushes.Transparent;
+            btn.Foreground = Brushes.White;
+            btn.FontSize = 12;
+            btn.FontWeight = FontWeights.Normal;
+        }
     }
 }

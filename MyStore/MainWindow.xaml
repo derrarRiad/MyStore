@@ -6,7 +6,95 @@
         xmlns:local="clr-namespace:MyStore"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="5*" />
+        </Grid.ColumnDefinitions>
+        <!-- side panel contains Buttons that access pages and show them in main panel-->
+        <StackPanel x:Name="side_panel"
+                    Grid.Column="0"
+                    Background="#FF05053C">
+          
+            <TextBlock x:Name="logo_textBlock"
+                       Text="Mon Magasin"
+                       FontSize="14"
+                       TextAlignment="Center"
+                       FontWeight="Bold"
+                       FontFamily="Yu Gothic"
+                       Foreground="AntiqueWhite"
+                       Margin="0 0 0 10"
+                       Padding="5"
+                       />
+            
+            <Button x:Name="sales_btn" 
+                    Content="Ventes"
+                    Height="35"
+                    FontFamily="Cambria Math"
+                    BorderBrush="Transparent"
+                    Foreground="GhostWhite"
+                    Background="Transparent"
+                    MouseEnter="Button_MouseEnter"
+                    MouseLeave="Button_MouseLeave"
+                    />
+            
+            <Button x:Name="purchases_btn"
+                    Content="Achats" 
+                    Height="35"
+                    FontFamily="Cambria Math"
+                    BorderBrush="Transparent"
+                    Foreground="GhostWhite"
+                    Background="Transparent"
+                    MouseEnter="Button_MouseEnter"
+                    MouseLeave="Button_MouseLeave"/>
+            
+            <Button x:Name="products_btn"
+                    Content="Produits" 
+                    Height="35"
+                    FontFamily="Cambria Math"
+                    BorderBrush="Transparent"
+                    Foreground="GhostWhite"
+                    Background="Transparent"
+                    MouseEnter="Button_MouseEnter"
+                    MouseLeave="Button_MouseLeave"/>
+            
+            <Button x:Name="users_btn"
+                    Content="Utilisateurs" 
+                    Height="35"
+                    FontFamily="Cambria Math"
+                    BorderBrush="Transparent"
+                    Foreground="GhostWhite"
+                    Background="Transparent"
+                    MouseEnter="Button_MouseEnter"
+                    MouseLeave="Button_MouseLeave"/>
+            
+            <Button x:Name="statistics_btn"
+                    Content="Statistics" 
+                    FontFamily="Cambria Math"
+                    Height="35"        
+                    BorderBrush="Transparent"
+                    Foreground="GhostWhite"
+                    Background="Transparent"
+                    MouseEnter="Button_MouseEnter"
+                    MouseLeave="Button_MouseLeave"/>
+            
+            <Button x:Name="exit_btn"
+                    Content="Quitter" 
+                    FontFamily="Cambria Math"
+                    Height="35"
+                    BorderBrush="Transparent"
+                    Foreground="GhostWhite"
+                    Background="Transparent"
+                    MouseEnter="Button_MouseEnter"
+                    MouseLeave="Button_MouseLeave" 
+                    />
+        
+        </StackPanel>
+        <!-- main Panel hosts all the pages of the application except the login page-->
+        <StackPanel x:Name="main_panel"
+                    Grid.Column="1">
+            
+        </StackPanel>
     </Grid>
 </Window>
